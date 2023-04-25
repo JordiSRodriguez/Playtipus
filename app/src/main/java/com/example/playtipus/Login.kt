@@ -1,5 +1,6 @@
 package com.example.playtipus
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.net.Uri
 import android.widget.Toast
@@ -30,6 +31,7 @@ import androidx.navigation.NavController
 import com.example.playtipus.navegacion.AppScreens
 
 
+@SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
 fun PantallaLogin(navController: NavController, viewModel: LoginViewModel) {
     Scaffold() {
@@ -42,6 +44,8 @@ fun PantallaLogin(navController: NavController, viewModel: LoginViewModel) {
         }
     }
 }
+
+
 
 @Composable
 fun Login(navController: NavController, viewModel: LoginViewModel) {
