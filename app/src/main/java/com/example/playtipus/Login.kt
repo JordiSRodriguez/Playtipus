@@ -45,8 +45,6 @@ fun PantallaLogin(navController: NavController, viewModel: LoginViewModel) {
     }
 }
 
-
-
 @Composable
 fun Login(navController: NavController, viewModel: LoginViewModel) {
 
