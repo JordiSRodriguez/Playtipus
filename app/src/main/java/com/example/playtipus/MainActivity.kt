@@ -6,12 +6,10 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.compose.setContent
 import androidx.activity.result.IntentSenderRequest
-import androidx.activity.result.contract.ActivityResultContract
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.activity.viewModels
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
-import androidx.compose.material3.Surface
+import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
@@ -27,7 +25,7 @@ import com.example.playtipus.navegacion.AppNavigation
 import com.example.playtipus.presentation.signin.GoogleAuthUI
 import com.example.playtipus.presentation.signin.SignInScreen
 import com.example.playtipus.presentation.signin.SignInViewModel
-import com.example.playtipus.ui.theme.PlaytipusTheme
+import com.example.playtipus.ui.theme.ui.theme.PlaytipusTheme
 import com.google.android.gms.auth.api.identity.Identity
 import kotlinx.coroutines.launch
 
@@ -56,8 +54,8 @@ class MainActivity : ComponentActivity() {
                             val viewModel = viewModel<SignInViewModel>()
                             val state by viewModel.state.collectAsState()
 
-                            val laucher = rememberLauncherForActivityResult(
-                                contract = ActivityResultContracts.StartActivityForResult(),
+                            val launcher = rememberLauncherForActivityResult(
+                                contract = ActivityResultContracts.StartIntentSenderForResult(),
                                 onResult = { result ->
                                     if(result.resultCode == RESULT_OK) {
                                         lifecycleScope.launch {
